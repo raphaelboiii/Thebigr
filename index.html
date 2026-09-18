@@ -1,87 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Starting Menu</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="monetag" content="cd3f6daab1950d56cc8284e65a83b1ba">
-<script>(function(s){s.dataset.zone='11810591',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BigR Games — a faster, cleaner unblocked games portal with arcade classics, sports, action, and retro browser favorites."
+    />
+    <title>BigR Games</title>
     <link rel="stylesheet" href="styles.css" />
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q919W0VJ1S"></script>
-      <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-Q919W0VJ1S');
-      </script>
   </head>
-  <body>
-  <div id="main">
-    <main>
-      <div id="games">
-        <h1>Click here to continue:</h1>
-        <button type="button" class="nav-btn" onclick="location.href='start.html'">Proceed</button>
-        <br>
-        <h2>Alternative Access Methods:</h2>
-        <button type="button" class="nav-btn" onclick="location.href='launch.html'">via About:Blank (very reliable)</button>
-        <button type="button" class="nav-btn" onclick="location.href='blob.html'">via Blob: page (somewhat reliable)</button>
-      </div>
-      <br>
-      <p>You can also <a href="https://github.com/DotLYHiyou/DotGUI?tab=readme-ov-file#for-hosts">self-host your own links!</a></p>
-    </main>
-  </div>
-  <script>
-          // dotgui-panic: global panic key, guards typing
-          document.addEventListener('keydown', function(e) {
-            var t = e.target;
-            if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
-            var key = '';
-            try { key = localStorage.getItem('dotgui_panic_key') || 'k'; } catch (err) { key = 'k'; }
-            if ((e.key || '').toLowerCase() !== (key || '').toLowerCase() || !key) return;
-            try {
-              document.title = 'Google';
-              var f = document.querySelector("link[rel~='icon']");
-              if (f) f.href = 'https://www.google.com/favicon.ico';
-            } catch (err) {}
-            var go = true, url = 'https://classroom.google.com';
-            try {
-              go = (localStorage.getItem('dotgui_panic_redirect') || 'true') === 'true';
-              url = localStorage.getItem('dotgui_panic_url') || url;
-            } catch (err) {}
-            if (go && url) window.location.href = url;
-          });
-        </script>
-</body>
-  <script>
-    (function() {
-      const value = localStorage.getItem('tabCloaker') || 'default';
-      const favicon = document.querySelector("link[rel~='icon']") || (() => {
-        const link = document.createElement('link');
-        link.rel = 'icon';
-        document.head.appendChild(link);
-        return link;
-      })();
-      if (value === 'google') {
-        document.title = 'Google';
-        favicon.href = 'https://www.google.com/favicon.ico';
-      } else if (value === 'vocab') {
-        document.title = 'My Learning | Vocabulary.com';
-        favicon.href = 'https://www.vocabulary.com/favicon.ico';
-      } else if (value === 'canvas') {
-          document.title = 'Canvas';
-          favicon.href = 'https://canvas.instructure.com/favicon.ico';
-        } else if (value === 'drive') {
-          document.title = 'Google Drive';
-          favicon.href = 'https://drive.google.com/favicon.ico';
-        } else if (value === 'docs') {
-          document.title = 'Google Docs';
-          favicon.href = 'https://docs.google.com/favicon.ico';
-        } else {
-        favicon.href = 'favicon.ico';
-      }
-    })();
-  </script>
-  <footer>
-  </footer>
+  <body class="landing-page">
+    <div class="page-shell">
+      <header class="landing-header">
+        <div class="brand" aria-label="BigR Games brand">
+          <div class="brand-mark">B</div>
+          <div class="brand-copy">
+            <span class="brand-name">BigR</span>
+            <span class="brand-sub">games • arcade • classics</span>
+          </div>
+        </div>
+
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="#featured">Featured</a>
+          <a href="#genres">Genres</a>
+          <a href="#quick-play">Quick Play</a>
+        </nav>
+
+        <a class="nav-button primary" href="start.html">Play now</a>
+      </header>
+
+      <main class="landing-main">
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">The new era of browser play</span>
+            <h1>BigR Games</h1>
+            <p>
+              Fast, sharp, and built for quick sessions. Jump into arcade hits,
+              sports games, retro classics, and modern browser favorites with a cleaner,
+              more polished game-site experience.
+            </p>
+
+            <div class="cta-row">
+              <a class="cta primary" href="start.html">Start playing</a>
+              <a class="cta secondary" href="select.html">Browse library</a>
+            </div>
+
+            <ul class="stats" aria-label="Site stats">
+              <li>
+                <strong>80+</strong>
+                <span>games</span>
+              </li>
+              <li>
+                <strong>4</strong>
+                <span>modes</span>
+              </li>
+              <li>
+                <strong>100%</strong>
+                <span>browser ready</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-panel" aria-label="Featured games preview">
+            <div class="panel-top">
+              <span>Trending now</span>
+              <span class="live-dot">Live</span>
+            </div>
+
+            <div class="game-stack">
+              <div class="mini-game">
+                <span class="mini-icon">🏀</span>
+                <div>
+                  <strong>Retro Bowl</strong>
+                  <small>Sports</small>
+                </div>
+              </div>
+
+              <div class="mini-game">
+                <span class="mini-icon">🎮</span>
+                <div>
+                  <strong>Slope</strong>
+                  <small>Arcade</small>
+                </div>
+              </div>
+
+              <div class="mini-game">
+                <span class="mini-icon">⚡</span>
+                <div>
+                  <strong>Geometry Dash</strong>
+                  <small>Rhythm</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="featured" class="feature-section">
+          <div class="section-heading">
+            <p>Featured</p>
+            <h2>Popular right now</h2>
+          </div>
+
+          <div class="feature-grid">
+            <a class="feature-card" href="pages/game-pages/retrobowl.html">
+              <img src="media/buttons/unnamed.png" alt="Retro Bowl" />
+              <div>
+                <strong>Retro Bowl</strong>
+                <span>Take control and lead your team to glory.</span>
+              </div>
+            </a>
+
+            <a class="feature-card" href="pages/game-pages/slope.html">
+              <img src="media/buttons/slope.jpg" alt="Slope" />
+              <div>
+                <strong>Slope</strong>
+                <span>Stay sharp and survive the endless descent.</span>
+              </div>
+            </a>
+
+            <a class="feature-card" href="pages/game-pages/geometrydash.html">
+              <img src="media/buttons/geometry.png" alt="Geometry Dash" />
+              <div>
+                <strong>Geometry Dash</strong>
+                <span>Precision platforming with a nonstop rhythm.</span>
+              </div>
+            </a>
+
+            <a class="feature-card" href="pages/game-pages/amongus.html">
+              <img src="media/buttons/Among_Us.webp" alt="Among Us" />
+              <div>
+                <strong>Among Us</strong>
+                <span>Fast rounds, clever tactics, and teamwork.</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section id="genres" class="feature-section">
+          <div class="section-heading">
+            <p>Browse</p>
+            <h2>Every vibe in one place</h2>
+          </div>
+
+          <div class="genre-grid">
+            <div class="genre-card">
+              <span>🏃</span>
+              <h3>Arcade</h3>
+              <p>Dash, dodge, smash, and go again.</p>
+            </div>
+            <div class="genre-card">
+              <span>⚽</span>
+              <h3>Sports</h3>
+              <p>Play quick matches and classic ball games.</p>
+            </div>
+            <div class="genre-card">
+              <span>🧩</span>
+              <h3>Puzzlers</h3>
+              <p>Smart challenges for crisp thinking.</p>
+            </div>
+            <div class="genre-card">
+              <span>🕹️</span>
+              <h3>Retro</h3>
+              <p>Old-school energy with a modern interface.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="quick-play" class="feature-section quick-play">
+          <div class="section-heading">
+            <p>Jump in</p>
+            <h2>Ready in seconds</h2>
+          </div>
+
+          <div class="quick-actions">
+            <a href="select.html">Open the game library</a>
+            <a href="launch.html">Launch in a new tab</a>
+            <a href="search.html">Use the search page</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

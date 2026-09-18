@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DotGUI</title>
+    <title>BigR Games</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
     <meta name="monetag" content="cd3f6daab1950d56cc8284e65a83b1ba">
-<script>(function(s){s.dataset.zone='11810591',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script>(function(s){s.dataset.zone='11810591',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
     
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q919W0VJ1S"></script>
-      <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-Q919W0VJ1S');
-      </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Q919W0VJ1S');
+    </script>
   </head>
   <body>
     <nav>
@@ -44,113 +44,60 @@
     .search-container input { flex:1; background:#022c3a; color:#b1e8fc; border:none; border-radius:10px; padding:0.8em 1.5em; font-family:Outfit,sans-serif; font-size:1.1em; outline:none; }
     .search-container input::placeholder { color:#066b99; }
     .search-container input:focus { box-shadow:0 0 0 2px #00eaff; }
-    .search-container button { background:rgb(0,0,0); color:rgb(0,242,255); border:none; border-radius:10px; padding:0.8em 1.4em; font-family:Outfit,sans-serif; font-size:18px; cursor:pointer; }
-    .button-container { display:flex; gap:15px; justify-content:center; align-items:center; flex-wrap:wrap; }
-    .button-container button { width:60px; height:60px; padding:10px; border-radius:12px; display:flex; justify-content:center; align-items:center; background:rgb(0,0,0); border:none; cursor:pointer; }
-    .button-container button img { width:40px; height:40px; }
-    .update-badge { display:inline-block; font-size:0.85em; padding:0.3em 0.8em; border-radius:50px; background:rgba(0,0,0,0.3); color:#00f2ff; border:1px solid rgba(0,242,255,0.3); }
+    /* BigR branded home surface */
+    .brand-banner {
+      width: min(960px, calc(100% - 18px));
+      margin: 28px auto 10px;
+      padding: 28px 24px 18px;
+      border-radius: 30px;
+      background: rgba(7, 14, 25, 0.72);
+      border: 1px solid rgba(135, 208, 255, 0.14);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .brand-banner h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      letter-spacing: -0.06em;
+      line-height: 0.95;
+    }
+    .brand-banner p {
+      margin: 0 auto;
+      max-width: 700px;
+      color: #b2d0ea;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .brand-banner .cta-row { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:22px; }
+    .brand-banner .cta { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0.8rem 1.2rem; border-radius:12px; border:1px solid transparent; font-weight:700; }
+    .brand-banner .cta.primary { background: linear-gradient(135deg, #7bd8ff, #64f0c8); color:#081120; }
+    .brand-banner .cta.secondary { background: rgba(9, 15, 27, 0.7); color:#edf7ff; border-color: rgba(123,216,255,0.2); }
   </style>
-  <div id="main">
-    <main id="homestuff">
-      <img src="media/full.png" width="250px" alt="DotGUI Logo">
-      <span class="update-badge">Patch Update • 9/14/2026</span>
+    <div class="brand-banner">
+      <h1>BigR Games</h1>
+      <p>Arcade, sports, action, retro and browser favorites — all in one cleaner, faster gaming portal.</p>
+      <div class="cta-row">
+        <a href="select.html" class="cta primary">Browse games</a>
+        <a href="launch.html" class="cta secondary">Open launcher</a>
+      </div>
+    </div>
+    <div id="homestuff">
       <div class="search-container">
-        <input id="bar" type="text" placeholder="Search or enter URL..." autocomplete="off" spellcheck="false">
-        <button onclick="nav()">Go</button>
+        <input id="searchInput" type="text" placeholder="Search a game..." aria-label="Search games">
       </div>
-      <div class="button-container">
-        <button onclick="navTo('https://youtube.com')"><img src="media/quick/datube.svg" alt="YouTube"></button>
-        <button onclick="navTo('https://web.spotify.com')"><img src="media/quick/bigtify.svg" alt="Spotify"></button>
-        <button onclick="navTo('https://github.com')"><img src="media/quick/github.svg" alt="Github"></button>
-      </div>
-      <p id="random-text" style="font-size:1.2em; margin:20px 0;"></p>
-      <p>Join our <a onclick=window.location.href="https://discord.com/invite/U8tT8AazXb">community server</a>! Make sure to star DotGUI on GitHub if you fork it!</p>
+      <button class="button" onclick="window.location.href='select.html'">Enter the game library</button>
+    </div>
     <script>
-        function navTo(url) {
-            try { sessionStorage.setItem("searchQuery", url); } catch(e) {}
-            window.location.href = "search.html?q=" + encodeURIComponent(url);
-        }
-        function nav() {
-            var q = document.getElementById("bar").value.trim();
-            if (!q) return;
-            var target;
-            if (q.indexOf(" ") === -1 && q.indexOf(".") !== -1) {
-                target = q.startsWith("http") ? q : "https://" + q;
-            } else {
-                target = "https://html.duckduckgo.com/html/?q=" + encodeURIComponent(q);
-            }
-            try { sessionStorage.setItem("searchQuery", target); } catch(e) {}
-            window.location.href = "search.html?q=" + encodeURIComponent(q);
-        }
-        document.getElementById("bar").addEventListener("keydown", function(e){ if(e.key==="Enter") nav(); });
-        const texts = [
-            '"Work on DotGUI or play Roblox?" - me, probably',
-            "Did you know? DotGUI would've been 'Zenithub Rework', rebrand seemed cool. So much for that...",
-            "If I remade DotGUI, search would be day one fr",
-            "Militant is the best TDS starter, change my mind",
-            "Who needs announcements when you got these?",
-            "Stop using the request form for problems fr",
-            "Like 3 people still check Discord, just join it",
-            "Too many ideas, not enough time tbh",
-            "Wish people used the latest DotGUI, but oh well",
-        ];
-        document.getElementById("random-text").textContent = texts[Math.floor(Math.random() * texts.length)];
-    </script>
-
-    </main>
-  </div>
-  <script>
-          // dotgui-panic: global panic key, guards typing
-          document.addEventListener('keydown', function(e) {
-            var t = e.target;
-            if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
-            var key = '';
-            try { key = localStorage.getItem('dotgui_panic_key') || 'k'; } catch (err) { key = 'k'; }
-            if ((e.key || '').toLowerCase() !== (key || '').toLowerCase() || !key) return;
-            try {
-              document.title = 'Google';
-              var f = document.querySelector("link[rel~='icon']");
-              if (f) f.href = 'https://www.google.com/favicon.ico';
-            } catch (err) {}
-            var go = true, url = 'https://classroom.google.com';
-            try {
-              go = (localStorage.getItem('dotgui_panic_redirect') || 'true') === 'true';
-              url = localStorage.getItem('dotgui_panic_url') || url;
-            } catch (err) {}
-            if (go && url) window.location.href = url;
-          });
-        </script>
-</body>
-  <script>
-    (function() {
-      const value = localStorage.getItem('tabCloaker') || 'default';
-      const favicon = document.querySelector("link[rel~='icon']") || (() => {
-        const link = document.createElement('link');
-        link.rel = 'icon';
-        document.head.appendChild(link);
-        return link;
-      })();
-      if (value === 'google') {
-        document.title = 'Google';
-        favicon.href = 'https://www.google.com/favicon.ico';
-      } else if (value === 'vocab') {
-        document.title = 'My Learning | Vocabulary.com';
-        favicon.href = 'https://www.vocabulary.com/favicon.ico';
-      } else if (value === 'canvas') {
-          document.title = 'Canvas';
-          favicon.href = 'https://canvas.instructure.com/favicon.ico';
-        } else if (value === 'drive') {
-          document.title = 'Google Drive';
-          favicon.href = 'https://drive.google.com/favicon.ico';
-        } else if (value === 'docs') {
-          document.title = 'Google Docs';
-          favicon.href = 'https://docs.google.com/favicon.ico';
-        } else {
-        favicon.href = 'favicon.ico';
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput) {
+        searchInput.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter') {
+            const term = (searchInput.value || '').trim().toLowerCase();
+            if (!term) return;
+            window.location.href = 'select.html';
+          }
+        });
       }
-    })();
-  </script>
-  <footer>
-    <p>Made by DotLYHiyou on GitHub. Only listed contributors are affiliated. If someone claims otherwise, leave.</p>
-  </footer>
+    </script>
+  </body>
 </html>
